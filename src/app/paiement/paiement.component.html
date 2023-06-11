@@ -1,0 +1,67 @@
+<meta charset="UTF-8">
+<div class="entree">
+	<img src="../../assets/images/merci.jpg" width="800px" alt="merci">
+	<br>
+	<h3> Merci! <span style="color:red;">{{nom}} {{prenom}} </span> d'avoir magasiné chez<br> boutique Quebec Informatique-QI</h3><br>
+	<hr>		
+</div>
+<h3> Résumé de votre commande : </h3>
+<div class="tableau">
+			<div id="info">
+				<b>NOMBRE D'ARTICLE:</b> {{nombre}} <br/>
+				<b>LES ARTICLES COMMANDÉS:</b><br>
+			</div>
+			<div>
+				<table class="table table-bordered">
+					<thead >
+						<tr>
+							<th><h5 >ID</h5></th>
+							<th><h5 >NOM</h5></th>
+							<th><h5 >PRIX</h5></th>
+							<th><h5 >MARQUE</h5></th>
+							<th><h5 >IMAGE</h5></th>
+						</tr>
+					</thead>
+					<tr  *ngFor="let article of table">
+						<td>{{article.id}}</td>
+						<td>{{article.nom}}</td>
+						<td>{{article.prix}} CDN$</td>
+						<td>{{article.marque}}</td>
+						<td><img src="{{article.image}}" alt="article" width="300px"></td>
+					</tr>
+			   </table>
+		   </div>
+</div>
+<h3> Les instructions pour faire un Virement Interac : </h3>
+<div class="Interac">
+	<img alt="logo" src="../../assets/images/paiement.jpg" width="500px">
+	<p>
+		<b> Votre commande est maintenant confirmée / Your order is confirmed</b>
+	</p>
+	<p> 
+		Vous recevrez un e-mail lorsque votre commande sera prête pour le ramassage.
+	</p>
+	<hr>
+	<h4>Instructions pour faire un Virement Interac :</h4>
+	<img alt="" src="../../assets/images/Interac.png" width="100px">
+	<ol>
+		<li value="1">
+			Ouvrez une session bancaire sur le site de votre institution financière.				
+		</li>
+		<li> 
+			Choisissez l’option Virement Interac dans le menu des virements/paiements.
+		</li>
+		<li>
+			Créez un destinataire (Boutique Quebec Informatique) en entrant notre adresse courriel: 
+		    <br>
+		    shop@boutiquequebecinfo.com
+		</li>
+		<li> 
+			Entrez l’information concernant le Virement Interac:
+			<br>
+			-question de sécurité: Inscrivez " le numéro de la commande"
+			<br>
+			-réponse: inscrivez "l’identifiant du premier article"
+		</li>
+	</ol>
+</div>

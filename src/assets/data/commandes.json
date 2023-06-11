@@ -1,0 +1,17 @@
+{"articles":[
+	{	 
+	     "numero":"1",
+		 "prenom":"Melanie",
+		 "ramassage":"30 Septembre 2020 à 15h30",
+		 "statut":"préparation",
+		 "id":"A00001"
+	},
+	{    
+	     "numero":"2",
+		 "prenom":"Jhonie",
+		 "ramassage":"10 Juin 2020 à 15h30",
+		 "statut":"livré",
+		 "id":"A00002"
+	}
+  ]
+}

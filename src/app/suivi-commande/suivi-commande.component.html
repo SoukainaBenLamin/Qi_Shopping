@@ -1,0 +1,85 @@
+<meta charset="UTF-8">
+<div class="container">
+	<div class="image">
+		<img src="../../assets/images/suivi.jpg" class="rounded"  width="500px" alt="suivi">
+	</div>
+	<div class="suivi">
+		<div>
+			<h4>Suivre une commande déjà passée.</h4><hr>
+		</div>
+		<div>
+			<label>
+				Numéro de commande:
+		 		<input type="text" placeholder="Entrez le numéro de votre Commande" [formControl]="numCommande">
+		 	</label>
+		</div>
+		<div>
+			<button (click)="chercherDansJson()" type="button" class="btn btn-danger">Chercher</button><hr>
+		</div>
+	</div>
+</div>
+<div *ngIf="verif">
+	<div>
+		<h3 > Les informations reliées à la commande numéro :{{numCommande.value}} </h3>
+		<hr>
+		<div class="tableau">
+			<table class="table table-bordered">
+				<thead >
+					<tr>
+						<th><h5 ><b>Numero</b></h5></th>
+						<th><h5 ><b>Prenom</b></h5></th>
+						<th><h5 ><b>Ramassage</b></h5></th>
+						<th><h5 ><b>Statut</b></h5></th>
+						<th><h5 ><b>Id de l'article</b></h5></th>
+					</tr>
+				</thead>
+				<tr >
+					<td>{{chercherDansJson().numero}}</td>
+					<td>{{chercherDansJson().prenom}}</td>
+					<td>{{chercherDansJson().ramassage}}</td>
+					<td>{{chercherDansJson().statut}}</td>
+					<td>{{chercherDansJson().id}}</td>
+				</tr>
+		   </table>
+		</div>
+	</div>
+	 {{get()}}
+	<h3>Pour plus d'informations sur l'article commandé, Cliquer 
+		<button (click)="get1()" type="button" class="btn btn-info">
+			<h4><b>ICI</b></h4>
+		</button>
+	</h3>
+	<hr>	
+	<div *ngIf="verif1" class="affichage">
+		<div>
+			<b >Nom de l'article:</b>
+		   	<h5 ><b>{{  chercherArticle(chercherDansJson()).nom }}</b></h5>
+			<b>Id de l'article:</b>
+			<h5 ><b>{{  chercherArticle(chercherDansJson()).id}}</b></h5>
+			<b>Marque de l'article:</b>
+			<h5><b>{{  chercherArticle(chercherDansJson()).marque}}</b></h5>
+			<b>Prix de l'article:</b>
+			<h5><b>{{  chercherArticle(chercherDansJson()).prix}} CDN$</b></h5>
+			<b>Image de l'article:</b>
+	   </div>
+	   <div>
+	        <img src="{{  chercherArticle(chercherDansJson()).image}}" width=500px alt="article">
+	   </div>
+   </div>
+</div>
+	
+<div *ngIf="nonExiste" class="erreur">
+	<div id="icon">
+		<i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+	</div>	 
+	<div id="text">
+		<b>
+			Aucune commande n'a pu être retracée à partir 
+			de ce numéro de commande.
+		</b>
+	</div>
+ 	{{get()}}
+</div>
+
+
+

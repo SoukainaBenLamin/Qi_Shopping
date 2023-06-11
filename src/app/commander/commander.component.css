@@ -1,0 +1,72 @@
+.container {
+    display: flex;
+	flex-wrap:wrap;
+	justify-content: space-around;
+	align-items: center;
+}
+.items {
+	display: flex;
+	width:500px;
+}
+
+.bouton {
+	width:250px;
+	padding:10px;
+}
+
+#btn,#btn1 {
+	display: flex;
+    justify-content: space-around;
+}
+.articles {
+	text-align:center;
+    justify-content: space-around;
+ 	align-items: center;
+	width:200px;
+ 	height:200px;
+	margin:20px;
+	padding:25px;
+}
+
+h4{
+	color:red;
+}
+
+input{
+	width: 500px;
+	border-width: 1px;
+	border-color: #000;
+	border-style: dotted;
+	border-radius: 15px;
+	−moz−border-radius: 15px;
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.commande {
+	justify-content: space-around;
+	align-items: center;
+	padding:25px;	
+}
+
+.erreur{
+	display:flex;
+	justify-content: space-around;
+	width:350px;
+	margin-left: auto;
+    margin-right: auto;
+    margin-top:20px;
+    background-color:#F2E8E8;
+    color:#C70505;;
+    height:75px;
+    padding:15px;
+	
+}
+#text{
+	width:250px;
+}
+.ajoutPan {
+	padding:10px;
+	
+}

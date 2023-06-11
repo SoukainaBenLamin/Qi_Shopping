@@ -1,0 +1,86 @@
+<meta charset="UTF-8">
+<div  class="container">
+	<div  *ngFor="let article of articles">
+		<div class="items">
+			<div>
+				<img src="{{article.image}}" width="200px" alt="article">
+			</div>
+			<div class="articles">
+		 		{{article.nom}} de la marque {{article.marque}}<br>
+				PRIX: <h4>{{article.prix}} CDN$</h4><br>
+			</div>
+		</div>
+		<div class="bouton">
+			<button class="btn btn-primary btn-block"  id="btn" (click)="ajouterAuPanier(article)">
+				<div >
+					<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+				</div>
+				<div>
+					<h5><b>Ajouter au panier</b></h5>
+				</div> 
+			</button><br>
+			<button  class="btn btn-primary btn-block" id="btn1" (click)="retirerDuPanier(article)">
+				<div>
+					<i class="fa fa-trash-o" aria-hidden="true"></i>
+				</div>
+				<div>
+					<h5><b>Retirer du panier</b></h5>
+				</div>
+			</button>
+		</div>
+	</div>
+	<div class="commande">
+		<button (click)="passerCommande()" class="btn btn-success">
+			<h5><b> Passer la commande ({{nbrArticle.value}} articles)</b></h5>
+		</button>
+		<div *ngIf="popup">
+			<div class="ajoutPan">
+				<h4>Les articles ajoutés au panier:</h4>
+				<ul>
+					<li *ngFor="let elem of tabArticle">
+						<h6>
+							<b>{{elem.nom}}</b>
+						 	(id:{{elem.id}} , prix: {{elem.prix}} CDN$)
+						</h6> 
+					</li>
+				</ul>
+			</div>
+			<label>
+ 			 	Nom:
+ 				<input type="text" placeholder="Entrez votre nom" [formControl]="name">
+			</label><br>
+			<label>
+  				Prenom:
+  				<input type="text" placeholder="Entrez votre prenom" [formControl]="prenom">
+			</label><br>
+			<label>
+  				Nombre d'articles au panier:
+  				<input type="text" [formControl]="nbrArticle">
+			</label><br>
+			<a routerLink="/paiment">
+				<button class="btn btn-success" (click)="payer()">
+					<h5><b> Payer</b></h5>
+				</button>
+			</a>
+
+		</div>
+		<div *ngIf="aucun" class="erreur">	
+			<div>
+				<i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+			</div>	 
+			<div id="text">
+				<b>Veuillez ajouter au moins une article au panier .</b>
+
+			</div>
+		</div>	
+	
+	</div>		
+</div>
+
+
+
+	
+	
+	
+	
+	

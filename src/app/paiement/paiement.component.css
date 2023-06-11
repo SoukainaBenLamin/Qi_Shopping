@@ -1,0 +1,33 @@
+.Interac {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	margin-top: 80px;
+	width: 700px;
+	justify-content: center;
+	border-radius: 4px;
+	border-color: grey;
+	border-style:solid;
+	padding:20px;
+}
+.entree{
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	margin-top: 80px;
+	width: 900px;
+}
+.tableau {
+	display:flex;
+	justify-content:space-around;
+	width:1000px;
+	margin-left: auto;
+	margin-right: auto;
+	padding:25px;
+}
+h5{
+	color:red;
+}
+#info{
+	width:350px;
+}
